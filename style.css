@@ -1,0 +1,457 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: linear-gradient(135deg, #000000, #8b6c5c, #ffffff, #808080);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+    overflow-x:hidden;
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+
+
+.pedagogika {
+    width: 100%;
+    text-align: center;
+    background-color: #8b6c5c;
+    padding: 10px;
+    color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.pedagogika p {
+    margin: 5px 0;
+}
+
+.header-container {
+    display: flex;
+    position: relative;
+    z-index: 2;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    padding: 10px 20px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+
+.user-block {
+    display: flex;
+    align-items: center;
+    margin-right: 80px;
+}
+
+.user-block img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.user-block span {
+    color: #fff;
+}
+
+.navigation {
+    background-color: #333;
+    width: 100%;
+}
+
+.navigation ul {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.navigation ul li {
+    margin-right: 30px;
+}
+
+.navigation ul li:last-child {
+    margin-right: 0;
+}
+
+.navigation ul li a {
+    position: relative; /* Устанавливаем позицию как относительную для корректного позиционирования псевдоэлемента */
+    text-decoration: none;
+    color: white;
+}
+
+.navigation ul li a::before {
+    content: '';
+    position: absolute;
+    bottom: -7px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: transparent; /* Изначально прозрачный */
+    transition: background-color 0.3s ease; /* Добавляем плавное изменение цвета */
+}
+
+.navigation ul li a:hover::before {
+    background-color: #ffffff; /* Изменяем цвет при наведении курсора */
+}
+
+
+.slider input[type="radio"] {
+    display: none;
+}
+
+.slider {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.237); /* черный цвет с прозрачностью */
+    pointer-events: none; /* чтобы не блокировать взаимодействие с содержимым под слоем */
+    z-index: 2; /* устанавливаем поверх изображений */
+}
+  
+  .slides {
+    display: flex;
+
+  }
+  
+  .slide {
+    width: 100%;
+    display: none;
+  }
+  
+.slide video {
+    width: 100%;
+    height: 100%;
+}
+  .slides-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: black;
+    padding: 10px;
+    color: white;
+  }
+
+
+  
+  .slide-info {
+    display: none;
+  }
+
+  .product img {
+    width: 80px;
+    height: auto;
+    margin-bottom: 10px;
+}
+.product-container {
+    display: flex;
+    justify-content: space-around;
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 20px;
+    margin-top: 0;
+}
+.product {
+    width: 30%;
+    padding: 20px;
+    background-color: #f1f1f1;
+    border-radius: 5px;
+    text-align: center;
+    margin-bottom: 20px;
+    position: relative;
+}
+.product a {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #ffcccc;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 10px;
+    position: relative;
+    overflow: hidden;
+}
+.product a::before,
+.product a::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background: rgba(0, 0, 0, 0.4);
+    transition: all 0.3s ease;
+    border-radius: 10px;
+    z-index: -1;
+}
+.product a::before {
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+.product a::after {
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+.product a:hover::before {
+    width: 0;
+}
+.product a:hover::after {
+    height: 0;
+}
+.product-info-full {
+    display: none;
+    padding: 20px;
+    background-color: #f1f1f1;
+    border-radius: 5px;
+    text-align: center;
+    margin-bottom: 20px;
+    position: relative;
+}
+.product-info-full a {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #ffcccc;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 10px;
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+  
+  .navigation_sliders{
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .navigation_sliders label {
+    cursor: pointer;
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    background-color: #ccc;
+    border-radius: 50%;
+    margin: 0 5px;
+  }
+  
+  /* Определяем цвет активного элемента навигации */
+  #slide1:checked ~ .navigation_sliders label[for="slide1"],
+  #slide2:checked ~ .navigation_sliders label[for="slide2"],
+  #slide3:checked ~ .navigation_sliders label[for="slide3"] {
+    background-color: #ae7551;
+  }
+  
+  /* Показываем текущий слайд и его информацию */
+  #slide1:checked ~ .slides #slide1,
+  #slide2:checked ~ .slides #slide2,
+  #slide3:checked ~ .slides #slide3 {
+    display: block;
+  }
+  
+  #slide1:checked ~ .slides-info #slide1-info,
+  #slide2:checked ~ .slides-info #slide2-info,
+  #slide3:checked ~ .slides-info #slide3-info {
+    display: block;
+  }
+
+.slider_content img {
+    max-width: 100%;
+}
+.vacancy-row {
+    display: flex;
+    position: relative;
+    top: 50px;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.vacancy {
+    width: 300px;
+    height: 200px;
+    margin: 10px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+    transition: height 0.5s;
+    flex: 0 0 auto;
+}
+
+.vacancy h3 {
+    margin-top: 0;
+}
+
+.vacancy .details {
+    display: none;
+    margin-top: 10px;
+}
+
+.vacancy.open {
+    height: auto;
+}
+
+.vacancy.open .details {
+    display: block;
+}
+
+.toggle-details {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.toggle-details svg {
+    width: 100%;
+    height: 100%;
+    fill: #8B6C5C;
+    transition: transform 0.3s ease;
+}
+
+.toggle-details.open svg {
+    transform: rotate(180deg);
+}
+
+.apply-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #8B6C5C;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.apply-button:hover {
+    background-color: #6e5647;
+}
+
+
+.footer {
+    position: relative;
+    top: 50px;
+    background-color: #333;
+    color: #fff;
+    padding: 50px 20px;
+    text-align: center;
+    width: 100%;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+}
+
+.footer-column {
+    flex: 1;
+}
+
+.footer h4 {
+    margin-bottom: 15px;
+}
+
+.footer p {
+    margin-bottom: 10px;
+}
+
+.footer form {
+    display: flex;
+    align-items: center;
+}
+
+.footer input[type="email"] {
+    width: 200px;
+    padding: 5px;
+    border: none;
+    border-radius: 5px 0 0 5px;
+}
+
+.footer button {
+    background-color: #8b6c5c;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+}
+
+.footer button:hover {
+    background-color: #6e5647;
+}
+
+
+.footer-column {
+    flex: 1;
+    margin: 0 20px;
+}
+
+.footer-column h4 {
+    margin-bottom: 10px;
+}
+
+.footer-column p, .footer-column form {
+    margin-bottom: 10px;
+}
+
+.footer-column form input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 4px;
+}
+
+.footer-column form button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+}
+
+.footer-column form button:hover {
+    background-color: #0056b3;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10px;
+}
+
+.social-icons a {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+}
+
+.social-icons img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
